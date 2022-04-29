@@ -23,6 +23,8 @@ type Options struct {
 	Debug        bool
 	InspectFiles bool
 
+	MaxSteps uint64
+
 	BulkFilesSourceOpts    BulkFilesSourceOpts
 	RegularFilesSourceOpts RegularFilesSourceOpts
 	FileMarksOpts          FileMarksOpts
@@ -116,6 +118,7 @@ func (o *Options) RunWithFiles(in Input, ui ui.UI) Output {
 		IgnoreUnknownComments:   o.IgnoreUnknownComments,
 		ImplicitMapKeyOverrides: o.ImplicitMapKeyOverrides,
 		StrictYAML:              o.StrictYAML,
+		MaxSteps:                o.MaxSteps,
 	})
 
 	libraryCtx := workspace.LibraryExecutionContext{Current: rootLibrary, Root: rootLibrary}

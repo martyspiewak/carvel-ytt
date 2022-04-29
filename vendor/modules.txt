@@ -31,7 +31,7 @@ github.com/inconshreveable/mousetrap
 # github.com/k14s/difflib v0.0.0-20201117154628-0c031775bf57
 ## explicit
 github.com/k14s/difflib
-# github.com/k14s/starlark-go v0.0.0-20200720175618-3a5c849cc368
+# github.com/k14s/starlark-go v0.0.0-20200720175618-3a5c849cc368 => ../starlark-go
 ## explicit; go 1.13
 github.com/k14s/starlark-go/internal/compile
 github.com/k14s/starlark-go/internal/spell
@@ -64,3 +64,4 @@ gopkg.in/check.v1
 # gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 ## explicit
 gopkg.in/yaml.v3
+# github.com/k14s/starlark-go => ../starlark-go

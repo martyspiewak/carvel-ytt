@@ -2,6 +2,8 @@ module github.com/vmware-tanzu/carvel-ytt
 
 go 1.17
 
+replace github.com/k14s/starlark-go => ../starlark-go
+
 require (
 	github.com/BurntSushi/toml v1.1.0
 	github.com/aws/aws-lambda-go v1.28.0

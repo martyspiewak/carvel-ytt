@@ -33,6 +33,7 @@ type TemplateLoaderOpts struct {
 	ImplicitMapKeyOverrides bool
 	StrictYAML              bool
 	SchemaEnabled           bool
+	MaxSteps                uint64
 }
 
 type TemplateLoaderOptsOverrides struct {
@@ -322,6 +323,7 @@ func (l *TemplateLoader) newThread(libraryCtx LibraryExecutionContext,
 	yttLibrary yttlibrary.API, file *files.File) *starlark.Thread {
 
 	thread := &starlark.Thread{Name: "template=" + file.RelativePath(), Load: l.Load}
+	thread.SetMaxExecutionSteps(l.opts.MaxSteps)
 	l.setCurrentLibrary(thread, libraryCtx.Current)
 	l.setRootLibrary(thread, libraryCtx.Root)
 	l.setYTTLibrary(thread, yttLibrary)
